@@ -1,0 +1,24 @@
+{
+  "name": "hometasks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "assert": "^2.0.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manybeast/hometasks.git"
+  },
+  "author": "Dmitriy Ipatov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manybeast/hometasks/issues"
+  },
+  "homepage": "https://github.com/Manybeast/hometasks#readme"
+}
