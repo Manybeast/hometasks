@@ -1,17 +1,30 @@
 const roman2arabic = (romanStr) => {
-  const values = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000, Z: 2000 };
+  const VALUES = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000, Z: 2000 };
 
-  if (!(1 <= romanStr.length <= 15)) return "Invalid roman numeral";
+  if (isInvalid(VALUES, romanStr)) throw new Error('Invalid roman numeral');
 
   return romanStr
       .toUpperCase()
       .split("")
-      .reduce(function (r, v, i, arr) {
-        const a = values[ arr[i] ];
-        const b = values[ arr[i + 1] ];
+      .reduce((prev, curr, i, arr) => {
+        const a = VALUES[ arr[i] ];
+        const b = VALUES[ arr[i + 1] ];
 
-        return b > a ? r - a : r + a;
+        return b > a ? prev - a : prev + a;
       }, 0);
 };
 
-console.log(roman2arabic("MCMXCIV"));
+const isInvalid = (valuesObj, str) => {
+  let invalid = false;
+  if (!(1 <= str.length <= 15) || typeof str !== 'string')
+    return true;
+
+  str.split('').forEach((item) => {
+    if(Object.keys(valuesObj).indexOf(item) < 0)
+      invalid = true;
+  });
+
+  return invalid;
+};
+
+console.log('Task 1: ', roman2arabic('MCMXCIV'));
