@@ -12,12 +12,10 @@ const sortArray = (arr1, arr2) => {
     !arr2.includes(item, 0) && notFound.push(item);
   });
 
-  return (result = result.concat(notFound));
+  return (result.concat(notFound));
 };
 
-console.log(
-  sortArray(
-  [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19],
-  [2, 1, 4, 3, 9, 6]
-  )
-);
+console.log('Task 4: ', sortArray(
+    [2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19],
+    [2, 1, 4, 3, 9, 6]
+));

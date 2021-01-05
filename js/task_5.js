@@ -12,6 +12,5 @@ const findTarget = (nums, target) => {
   return index;
 };
 
-console.log(
-    findTarget([1, 3, 5, 6], 7)
-);
+console.log('Task 5: ', findTarget([1, 3, 5, 6], 7));
+
